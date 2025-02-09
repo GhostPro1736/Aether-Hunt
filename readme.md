@@ -81,6 +81,16 @@ Este projeto é licenciado sob a licença MIT. Se você usar este código em seu
 
 "Baseado no projeto TRPG por [Seu Nome/GhostPro1736](https://github.com/GhostPro1736/Aether-Hunt)"
 
+## Observaçôes
+
+Alguns sistemas atualmente ainda estão em desenvolvimento como:
+Sistema de batalha base
+Inimigos
+Npcs
+Saves/loads
+Inventário
+Ataques
+
 ## 🔄 Versão Atual
 v0.25.1:
 CRIADA EM 09/02/2025 as 17:58
