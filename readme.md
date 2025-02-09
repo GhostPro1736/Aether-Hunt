@@ -77,7 +77,9 @@ Fique à vontade para entrar em contato por qualquer um desses meios!
 
 ## 📄 Licença
 
-Este projeto é de código aberto e está disponível para uso educacional e pessoal. Por favor, dê créditos se usar partes do código em seus próprios projetos.
+Este projeto é licenciado sob a licença MIT. Se você usar este código em seu próprio projeto, por favor, inclua uma referência ao projeto original e ao desenvolvedor:
+
+"Baseado no projeto TRPG por [Seu Nome/GhostPro1736](https://github.com/GhostPro1736/Aether-Hunt)"
 
 ## 🔄 Versão Atual
 v0.25.1:
