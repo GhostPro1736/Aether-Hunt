@@ -80,3 +80,6 @@ CRIADA EM 09/02/2025 as 23:26
 modificação de bibliotecas, de colorama para rich
 modificação geral(onde havia partes da biblioteca colorama, agora é feito pelo rich)
 criado um painel(um frame) para o ascii art de título
+#### versão 0.25.21:
+CRIADA EM 10/02/2025 as 15:35
+adicionado mais cores aos textos

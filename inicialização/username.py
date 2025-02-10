@@ -1,11 +1,12 @@
-from core import user
+from core import user, console
+from rich.prompt import Prompt
 def name():
     while True:
-        nome = input("Digite seu nome de usuário, Min 3 caracteres, Máx 15 caracteres: ")
+        nome = Prompt.ask("[b white]Digite seu nome de usuário[/], Min 3 caracteres, Máx 15 caracteres")
         if len(nome) < 3:
-            print("Por favor insira um nome de usuário válido")
+            console.print("Por favor insira um nome de usuário [b]válido[/]")
         elif len(nome) > 15:
-            print("Seu nome é grande demais, por favor, insira um nome mais curto")
+            console.print("Seu nome é [b]grande demais[/], por favor, insira um nome mais curto")
         else:
             user.name = nome
-            return print(f"Ótimo {nome}, sua jornada começa agora, vamos ver agora seu tipo de aura")
+            return console.print(f"Ótimo [bold yellow]{nome}[/], sua jornada começa agora, vamos ver agora [bold #00008B]seu tipo de aura[/]")
