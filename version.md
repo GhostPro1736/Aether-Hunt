@@ -75,3 +75,8 @@ ability agora é controlado por user também
 CRIADA EM 09/02/2025 as 17:58
 agora foi criada a função random_color dentro do arquivo random_letter_color
 ela permite fazer com que uma mensagem fique colorida, somente retornando a mensagem que deseja como parâmetro da função
+### versão 0.25.2:
+CRIADA EM 09/02/2025 as 23:26
+modificação de bibliotecas, de colorama para rich
+modificação geral(onde havia partes da biblioteca colorama, agora é feito pelo rich)
+criado um painel(um frame) para o ascii art de título
