@@ -1,4 +1,6 @@
-from core import user
+from core import user, console
+from rich.layout import Layout
+from rich.panel import Panel
 Abilities = {
 "Bastion": {"Escudo Espectral": {"Custo": "100% aura", "Efeito": "Bloqueia o próximo ataque e devolve 150% do dano.", "Descrição": "A melhor defesa é um contra-ataque esmagador!"}, "Égide de Retribuição": {"Custo": "80% aura", "Efeito": "Ignora dano por 1 turno e próximo ataque causa 200% de dano.", "Descrição": "Aproveite a invulnerabilidade para preparar o golpe decisivo."}, "Fúria da Carapaça": {"Custo": "30% HP", "Efeito": "ATK dobrado e DEF zerada por 3 turnos.", "Descrição": "Troque proteção por poder bruto!"}}, 
 "Flux": {"Raio de Plasma": {"Custo": "100% aura", "Efeito": "Ataque único de 300% ATK que ignora 50% da DEF.", "Descrição": "Um único disparo para terminar o combate."}, "Vórtice de Sobrecarga": {"Custo": "70% aura + 10% HP", "Efeito": "Causa 200% dano e paralisa inimigo por 1 turno.", "Descrição": "Congele o oponente para dominar o ritmo."}, "Modo Overdrive": {"Custo": "40% aura/turno", "Efeito": "+50% velocidade e +25% dano enquanto ativo.", "Descrição": "Acelere gradualmente para sobrepujar o inimigo."}},
@@ -8,8 +10,19 @@ Abilities = {
 "Perspicaz": {"Mira da Morte": {"Custo": "100% aura", "Efeito": "Próximo ataque é crítico e ignora defesas.", "Descrição": "Um único tiro, uma única morte."}, "Foco de Batalha": {"Custo": "80% aura", "Efeito": "Dobra precisão e +40% dano crítico por 3 turnos.", "Descrição": "Ameaça crescente com foco tático."}, "Estratégia Suprema": {"Custo": "100% aura + 15% HP", "Efeito": "100% acerto e +25% dano por 2 turnos.", "Descrição": "Domine o campo com recursos totais."}}}
 def show_abilities():
     print(f"Suas habilidades disponíveis para {user.aura} são:")
-    for x, (Ability, description) in enumerate(Abilities[user.aura].items()):
-        print(f"\nHabilidade {x+1}: {Ability} \nCusto: {description['Custo']} \nEfeito: {description['Efeito']} \nDescrição: {description['Descrição']}", end="\n")
+    layout = Layout()
+    habilities = {"Name": [], "Cost": [], "Effect": [], "Description": []}
+    for Ability, description in Abilities[user.aura].items():
+        habilities["Name"].append(Ability)
+        habilities["Cost"].append(description["Custo"])
+        habilities["Effect"].append(description["Efeito"])
+        habilities["Description"].append(description["Descrição"])
+    layout.split_column(Layout(name='Principal'))
+    layout['Principal'].split_row(
+        Layout(Panel(f"[bold blue]Custo[/]: \n{habilities['Cost'][0]} \n[bold green]Efeito[/]: \n{habilities['Effect'][0]} \n[bold magenta]Descrição[/]: \n{habilities['Description'][0]}", title=f"[bold orange1]{habilities['Name'][0]}[/]", border_style="Blue")),
+        Layout(Panel(f"[bold blue]Custo[/]: \n{habilities['Cost'][1]} \n[bold green]Efeito[/]: \n{habilities['Effect'][1]} \n[bold magenta]Descrição[/]: \n{habilities['Description'][1]}", title=f"[bold orange1]{habilities['Name'][1]}[/]", border_style="Blue")),
+        Layout(Panel(f"[bold blue]Custo[/]: \n{habilities['Cost'][2]} \n[bold green]Efeito[/]: \n{habilities['Effect'][2]} \n[bold magenta]Descrição[/]: \n{habilities['Description'][2]}", title=f"[bold orange1]{habilities['Name'][2]}[/]", border_style="Blue")))
+    console.print(layout)
 def choose_ability():
     show_abilities()
     while True:

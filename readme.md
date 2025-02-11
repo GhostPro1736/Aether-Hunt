@@ -92,6 +92,8 @@ Inventário
 Ataques
 
 ## 🔄 Versão Atual
-v0.25.21:
-CRIADA EM 10/02/2025 as 15:35
-adicionado mais cores aos textos
+v0.25.22:
+CRIADA EM 11/02/2025 as 00:28
+adicionado mais cores aos textos deo ability choice(arquivo ability)
+agora é renderizado as 3 opções ao mesmo tempo
+é criado um layout com um painel totalmente personalizado
