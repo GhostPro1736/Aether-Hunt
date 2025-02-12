@@ -3,4 +3,4 @@ class Gamestate:
         self.inicial = False
         self.InBattle = False
         self.exit = False
-        self.isAdmin = True
+        self.isAdmin = False

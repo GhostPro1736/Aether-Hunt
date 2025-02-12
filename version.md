@@ -101,3 +101,12 @@ para adicionar atributos específicos ao efeito é só usar, variavel_de_ataque.
 parametros em Effect.atributes(duration=Obrigatório, value=Opcional, caso tenha efeitos de buff/debuff, damage=Opcional, caso tenha efeitos de dano, trigger_condition=Opcional)
 para criar ataques é só criar uma variavel com Attacks(parametros)
 parametros em Attacks(isDef=Opcional, damage=Opcional, type=Opcional, defense=Opcional, hasEffect=Opcional, name=Obrigatório, counter=Opcional, counter_attack=Opcional, counts=Opcional, effects=Obrigatório(caso usado hasEffect=True), min_level=Opcional)
+### versão 0.26.1
+CRIADA EM 12/02/2025 as 19:16
+consertado bugs em classe attacks e effects
+agora o atributo é criado dentro do proprio ataque, fazendo com que o efeito principal não seja modificado com o ataque, mas agora o ataque tem um atributo proprio para cada efeito
+criado a função get_attribute que retorna o valor de todos os atributos quando não é digitado um atributo específico e retorna o atributo específico caso seja especificado
+os efeitos do ataque agora criam um dicionario pegando o nome do efeito(colocado no nome do efeito) com getattr e adicionando o efeito especificamente como o valor da chave
+melhorado tratamento de erros em attacks
+criado um arquivo debug.py que é iniciado com todo o inicio necessário, pulando sõ de nome, aura e habilidade com comandos de debug na seleção de habilidades
+criado arquivo effects.py que ficará armazenado todos os efeitos

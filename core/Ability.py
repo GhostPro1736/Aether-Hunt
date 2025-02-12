@@ -38,3 +38,15 @@ def choose_ability():
                 show_abilities()
         except ValueError:
             print("Valor inválido, por favor digite somente números")
+def debug_show_abilities():
+    habilities = {"Name": [], "Cost": [], "Effect": [], "Description": []}
+    for Ability, description in Abilities[user.aura].items():
+        habilities["Name"].append(Ability)
+        habilities["Cost"].append(description["Custo"])
+        habilities["Effect"].append(description["Efeito"])
+        habilities["Description"].append(description["Descrição"])
+def debug_choose_ability():
+    debug_show_abilities()
+    abilities = list(Abilities[user.aura].items())
+    chosen_ability, description = abilities[2]
+    user.ability.update_all(cost=description['Custo'], effect=description["Efeito"], name=chosen_ability, description=description["Descrição"])
