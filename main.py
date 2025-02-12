@@ -1,6 +1,6 @@
 from inicialização import title, name, type_aura
 from core import GameState, user
-from battle import choose_ability
+from core.Ability import choose_ability
 from inputs import get_inputs
 if title():
     print("Ótimo, primeiro vamos ver seu nome")

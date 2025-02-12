@@ -88,3 +88,16 @@ CRIADA EM 11/02/2025 as 00:28
 adicionado mais cores aos textos deo ability choice(arquivo ability)
 agora é renderizado as 3 opções ao mesmo tempo
 é criado um layout com um painel totalmente personalizado
+## versão 0.26 
+CRIADA EM 11/02/2025 as 21:49
+adicionado criação de ataques e efeitos via classe
+ataques tem seus próprios nomes, efeitos, durações, danos, defesa e etc.
+efeitos tem seus próprios tipos, buff, debuff, em quem será aplicado o efeito, nomes e etc
+efeitos tem função atribute para adicionar personalização no ataque, como duração do efeito e dano ou buff concedido
+ataques podem ter multiplos efeitos
+para criar um efeito é só criar uma variavel com o nome do efeito desejado com Effect(parametros)
+parametros em Effect(name=Obrigatório, effect_type=Obrigatório, buff_type=Opcional, stackable=Opcional, target=Obrigatório, priority=Opcional, max_duration=Opcional)
+para adicionar atributos específicos ao efeito é só usar, variavel_de_ataque.effect[indice, em qual posição ele está].atributes(parametros)
+parametros em Effect.atributes(duration=Obrigatório, value=Opcional, caso tenha efeitos de buff/debuff, damage=Opcional, caso tenha efeitos de dano, trigger_condition=Opcional)
+para criar ataques é só criar uma variavel com Attacks(parametros)
+parametros em Attacks(isDef=Opcional, damage=Opcional, type=Opcional, defense=Opcional, hasEffect=Opcional, name=Obrigatório, counter=Opcional, counter_attack=Opcional, counts=Opcional, effects=Obrigatório(caso usado hasEffect=True), min_level=Opcional)

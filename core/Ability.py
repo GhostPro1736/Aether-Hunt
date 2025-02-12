@@ -1,4 +1,4 @@
-from core import user, console
+from . import user, console
 from rich.layout import Layout
 from rich.panel import Panel
 Abilities = {
@@ -31,8 +31,7 @@ def choose_ability():
             abilities = list(Abilities[user.aura].items())
             if choice in range(1, len(abilities)+1):
                 chosen_ability, description = abilities[choice - 1]
-                user.ability.cost, user.ability.effect, user.ability.name, user.ability.description = (description['Custo'], description["Efeito"], chosen_ability, description["Descrição"])
-                description = f"\nCusto: {user.ability.cost} \nEfeito: {user.ability.effect} \nDescrição: {user.ability.description}"
+                user.ability.update_all(cost=description['Custo'], effect=description["Efeito"], name=chosen_ability, description=description["Descrição"])
                 return print(f"\nÓtima escolha, agora sua habilidade permanente é: {chosen_ability}")
             else:
                 print("\nPor favor coloque o número de sua habilidade desejada:\n", end="\n")
