@@ -110,3 +110,10 @@ os efeitos do ataque agora criam um dicionario pegando o nome do efeito(colocado
 melhorado tratamento de erros em attacks
 criado um arquivo debug.py que é iniciado com todo o inicio necessário, pulando sõ de nome, aura e habilidade com comandos de debug na seleção de habilidades
 criado arquivo effects.py que ficará armazenado todos os efeitos
+#### v0.26.11
+CRIADA EM 25/02/2025 as 22:06
+modificado área de seleção de habilidades
+* bugs conhecidos:
+área de seleção de habilidades está utilizando memória excessiva, área de seleção de habilidades está utilizando time.sleep para atualizar o painel, o que acaba ocasionando bugs de delay, caso não seja utilizado time acaba nãoi atualizando corretamente o painel
+* mudanças futuras:
+irei retirar todo resquicio da biblioteca rich do front-end e retirar a biblioteca keyboard, irei alterar a licença de mit para GPLv3 para adicionar pygamelib, com ele a parte gráfica irá melhorar drasticamente além de diminuir dependencias, além de ter um sistema de captura de teclas mais robusto, melhorando a área da seleção de habilidades
